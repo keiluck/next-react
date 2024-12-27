@@ -29,13 +29,15 @@ function ArticlePage() {
     const [html, setHtml] = useState('')
 
     //监听查询的条件
-    useEffect( ()=> {
-        fetch(`/api/admin/articles?page=${query.page}&per=${query.per}&title=${query.title}`)
+  useEffect(()=> {
+       fetch(`/api/admin/articles?page=${query.page}&per=${query.per}&title=${query.title}`)
         .then((res) => res.json())
         .then((res) => {
             setList(res.data.list);
             setTotal(res.data.total)
-        })
+        }).catch((error) => {
+            console.error('请求错误：', error);
+          })
     }, [query])
 
   //关了窗口后清空
