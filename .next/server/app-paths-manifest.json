@@ -1,6 +1,4 @@
 {
-  "/api/admin/login/route": "app/api/admin/login/route.js",
-  "/api/admin/articles/route": "app/api/admin/articles/route.js",
   "/admin/login/page": "app/admin/login/page.js",
   "/admin/(admin-layout)/dashboard/page": "app/admin/(admin-layout)/dashboard/page.js",
   "/admin/(admin-layout)/articles/page": "app/admin/(admin-layout)/articles/page.js"
