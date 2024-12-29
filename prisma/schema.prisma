@@ -33,3 +33,13 @@ model Articles {
 
   @@map("articles")
 }
+
+
+model TestList {
+  id          String  @id @unique @default(uuid())
+  name        String
+  description String
+  createdAt   DateTime @default(now())
+
+  @@map("testList")
+}
