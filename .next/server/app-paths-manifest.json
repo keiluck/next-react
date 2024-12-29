@@ -1,5 +1,9 @@
 {
+  "/api/goods/route": "app/api/goods/route.js",
   "/admin/login/page": "app/admin/login/page.js",
+  "/demo/page": "app/demo/page.js",
   "/admin/(admin-layout)/dashboard/page": "app/admin/(admin-layout)/dashboard/page.js",
-  "/admin/(admin-layout)/articles/page": "app/admin/(admin-layout)/articles/page.js"
+  "/admin/(admin-layout)/articles/page": "app/admin/(admin-layout)/articles/page.js",
+  "/admin/(admin-layout)/users/page": "app/admin/(admin-layout)/users/page.js",
+  "/demo/list/page": "app/demo/list/page.js"
 }

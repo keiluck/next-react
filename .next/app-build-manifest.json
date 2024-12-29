@@ -1,10 +1,9 @@
 {
   "pages": {
-    "/admin/(admin-layout)/layout": [
+    "/admin/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/admin/(admin-layout)/layout.css",
-      "static/chunks/app/admin/(admin-layout)/layout.js"
+      "static/chunks/app/admin/login/page.js"
     ],
     "/admin/layout": [
       "static/chunks/webpack.js",
@@ -18,21 +17,47 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/admin/(admin-layout)/dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin/(admin-layout)/dashboard/page.js"
+    ],
+    "/admin/(admin-layout)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/admin/(admin-layout)/layout.css",
+      "static/chunks/app/admin/(admin-layout)/layout.js"
+    ],
     "/admin/(admin-layout)/articles/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/admin/(admin-layout)/articles/page.css",
       "static/chunks/app/admin/(admin-layout)/articles/page.js"
     ],
-    "/admin/login/page": [
+    "/admin/(admin-layout)/users/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/login/page.js"
+      "static/chunks/app/admin/(admin-layout)/users/page.js"
     ],
-    "/admin/(admin-layout)/dashboard/page": [
+    "/demo/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/(admin-layout)/dashboard/page.js"
+      "static/chunks/app/demo/layout.js"
+    ],
+    "/demo/list/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/demo/list/page.js"
+    ],
+    "/demo/list/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/demo/list/layout.js"
+    ],
+    "/demo/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/demo/page.js"
     ]
   }
 }
