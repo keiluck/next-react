@@ -22,12 +22,13 @@ export async function generateMetadata({
 
 function TestListDetailPage({params, query}: Props) {
 
-
+ 
   return (
     <div>
       TestListDetailPage
      
       ListDetailPage--- {params.id},
+      
     </div>
   )
 }
