@@ -101,6 +101,9 @@ function ArticlePage() {
                         title: '序号',
                         width: 80,
                         render(v, r, i) {
+                            console.log("vv",v)
+                            console.log("ii",i)
+                            console.log("rr",r)
                           return i + 1
                         }
                       },
