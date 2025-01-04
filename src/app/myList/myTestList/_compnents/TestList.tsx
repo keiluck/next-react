@@ -1,13 +1,13 @@
 'use client'
-import React, {useState, useEffect}from 'react'
-import {Card, Avatar, List,Button } from 'antd';
+import React, { useState, useEffect } from 'react'
+import { Card, List, Button } from 'antd';
 import Link from 'next/link';
 
 
 type Item = {
-    id:string,
-    name :String,
-    description: String,
+  id: string,
+  name: String,
+  description: String,
 }
 
 type MyItems = {
@@ -15,7 +15,7 @@ type MyItems = {
   id: string;
   title: string;
   desc: string;
-  content:string;
+  content: string;
 }
 
 const data = [
@@ -52,105 +52,78 @@ function TestList() {
   // })
   const [loading, setLoading] = useState(false);
 
-const [list, setList] = useState<MyItems[]>([])
-const [query, setQuery] = useState({
-  per: 8,
-  page: 1,
-  title: ''
-});
-const [currentId, setCurrentId] = useState('');
-const [total, setTotal] = useState(0);
+  const [list, setList] = useState<MyItems[]>([])
+  const [query, setQuery] = useState({
+    per: 8,
+    page: 1,
+    title: ''
+  });
+  const [currentId, setCurrentId] = useState('');
+  const [total, setTotal] = useState(0);
 
-useEffect(()=> {
-  if (loading) {
-    return;
-  }
-  setLoading(true);
-  fetch(`/api/admin/articles?page=${query.page}&per=${query.per}&title=${query.title}`)
-  .then((res)=> res.json())
-  .then((res) => {
-    setList(res.data.list);
-    setTotal(res.data.total);
-    setLoading(false);
-  }
+  useEffect(() => {
+    if (loading) {
+      return;
+    }
+    setLoading(true);
+    fetch(`/api/admin/articles?page=${query.page}&per=${query.per}&title=${query.title}`)
+      .then((res) => res.json())
+      .then((res) => {
+        setList(res.data.list);
+        setTotal(res.data.total);
+        setLoading(false);
+      }
 
-  ).catch(()=> {
-    setLoading(false);
-  })
-},[query])
+      ).catch(() => {
+        setLoading(false);
+      })
+  }, [query])
 
   return (
     <div className='test_list'>
       TestList555
-      {/* <ul>
-        {data.map((item) => 
-        <li key={item.id}>
-          {item.name}:{item.description}
-         
-          </li>)}
-      </ul> */}
-  {/* <List
-    itemLayout="horizontal"
-    dataSource={list}
-    pagination={{ 
-      total,
-      onChange(page){
-          setQuery({
-              ...query,
-              page,
-              per: 10,
-          })
 
-      } }}
-    renderItem={(item, index) => (
-      <List.Item>
-        <List.Item.Meta
-          avatar={<Avatar src={item.image} />}
-          title={<a href="https://ant.design">{index}:{item.id}:{item.title}</a>}
-          description={item.desc}
-        />
-      </List.Item>
-    )}
-  /> */}
+      <List
+        rowKey='id'
+        grid={{
+          gutter: 16,
+          xs: 1,
+          sm: 2,
+          md: 4,
+          lg: 4,
+          xl: 6,
+          xxl: 3,
+        }}
 
-<List
-    grid={{
-      gutter: 16,
-      xs: 1,
-      sm: 2,
-      md: 4,
-      lg: 4,
-      xl: 6,
-      xxl: 3,
-    }}
-    
-    pagination={{ 
-      total,
-      onChange(page){
-          setQuery({
+        pagination={{
+          total,
+          onChange(page) {
+            setQuery({
               ...query,
               page,
               per: 8,
-          })
+            })
 
-      } }}
-    dataSource={list}
-    renderItem={(item) => (
-      <List.Item key={item.id}>
-        <Card title={item.title}>
-        <img 
-            src = {item.image || 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg'}
-            style = {{
-            display: 'block',
-            margin: '8vh auto',
-            width: '20vh',
-            height: '20vh',
-            maxHeight: '8vh'}}
-            alt = {item.title}
-       />
-          <p> {item.desc}</p>
-          <Link href={`/myList/myTestList/${item.id}`}>
-          {/* <Link
+          }
+        }}
+        dataSource={list}
+        renderItem={(item) => (
+          <List.Item key={item.id}>
+            <Card title={item.title}>
+              <img
+                src={item.image || 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg'}
+                style={{
+                  display: 'block',
+                  margin: '8vh auto',
+                  width: '20vh',
+                  height: '20vh',
+                  maxHeight: '8vh'
+                }}
+                alt={item.title}
+              />
+              <p> {item.desc}</p>
+              <Link href={`/myList/myTestList/${item.id}`}>
+                {/* <Link
             href={{
               pathname: `/myList/myTestList/${item.id}`,
               query: {
@@ -162,18 +135,17 @@ useEffect(()=> {
               },
             }}
           > */}
-          <Button size='small'  
+                <Button size='small'
                   type='primary'
-                  onClick={()=> {
-                    console.log("id",item.id)
-                     setCurrentId(item.id)   
+                  onClick={() => {
+                    setCurrentId(item.id)
                   }}> 详情</Button>
-                  </Link>
-          
-          </Card>
-      </List.Item>
-    )}
-  />
+              </Link>
+
+            </Card>
+          </List.Item>
+        )}
+      />
 
 
     </div>

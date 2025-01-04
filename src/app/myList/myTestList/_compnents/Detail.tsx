@@ -1,16 +1,16 @@
 
 import { useState, useEffect } from 'react'
-import React, {} from 'react'
+import React, { } from 'react'
 
 
- type product= {
-    title: string;
-    content: string;
-    // Add other article fields as needed
-  };
+type product = {
+  title: string;
+  content: string;
+  // Add other article fields as needed
+};
 
 
-async function Detail({params}:any) {
+async function Detail({ params }: any) {
   const response = await fetch(`/api/admin/articles/${params.id}`);
   const product = await response.json();
   return (

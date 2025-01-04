@@ -5,9 +5,9 @@ import { Metadata } from 'next';
 import TestList from './_compnents/TestList';
 
 export const metadata: Metadata = {
-    title:'test-list-page',
-    description: 'next-list-page',
-    keywords: 'next.js,react'
+  title: 'test-list-page',
+  description: 'next-list-page',
+  keywords: 'next.js,react'
 }
 
 function MyTestList() {
