@@ -1,36 +1,50 @@
-
 import { Metadata } from 'next'
 import React from 'react'
-import  {useEffect, useState} from 'react'
-// import { useRouter } from "next/router";
+import Detail from '../_compnents/Detail';
 
 type Props = {
     params: {   
       id: string;
       };
-      query: any
+      searchParmas:any
 }
 
+type product = {
+    title: string;
+    content: string;
+  };
+
+
 export async function generateMetadata({
-    params,query
+    params,searchParmas
 }:Props):Promise<Metadata>{
+  debugger
     return{
-        title:`detail ${params.id}`
+        title:`title ${params.id}`,
     }
 }
 
 
-function TestListDetailPage({params, query}: Props) {
+async function TestListDetailPage({params, searchParmas}: Props) {
+  debugger
+  console.log(123213)
 
- 
-  return (
-    <div>
-      TestListDetailPage
-     
-      ListDetailPage--- {params.id},
+  const response = await fetch(`/api/admin/articles/${params.id}`);
+  const product = await response.json()
+    
+    return (
+      <div>
+        <h1>Article Details</h1>
+        <div>ID: {params.id}</div>
+        searchParmas: {searchParmas}
       
-    </div>
-  )
+        {product.title}
+      </div>
+    );
+  
 }
 
 export default TestListDetailPage
+
+
+// app/myTestList/[id]/page.tsx

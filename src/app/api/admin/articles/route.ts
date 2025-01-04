@@ -5,7 +5,7 @@ export const GET = async (req: NextRequest) => {
     let per = (req.nextUrl.searchParams.get('per') as any) * 1 || 10;
     let page = (req.nextUrl.searchParams.get('page') as any) * 1 || 1;
     let title = (req.nextUrl.searchParams.get('title') as any) || "";
-    
+    debugger
     const data = await prisma.articles.findMany({
         where: {
             title: {
