@@ -10,6 +10,8 @@ import {
 import { Button, Layout, Menu, theme } from 'antd';
 import 'antd/dist/reset.css';
 import { useRouter } from 'next/navigation';
+import { Yellowtail } from 'next/font/google';
+import { Color } from 'antd/es/color-picker';
 
 const { Header, Sider, Content } = Layout;
 
@@ -23,11 +25,11 @@ function AntdAdmin({children}: any) {
 
   return (
     <div>
-      
       {/* AntdContainer{children} */}
       <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="demo-logo-vertical" />
+        <div style={{ color:'white' ,textAlign:'center',padding:'15px',background:'gray' }}>イベント管理</div>
         <Menu
           theme="dark"
           mode="inline"

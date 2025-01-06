@@ -1,8 +1,9 @@
 import React from 'react'
-
 import { Metadata } from 'next';
-
 import TestList from './_compnents/TestList';
+import SiderList from './_compnents/SiderList';
+import StarList from './_compnents/StarList';
+
 
 export const metadata: Metadata = {
   title: 'test-list-page',
@@ -14,7 +15,9 @@ function MyTestList() {
   return (
     <div>
       MyTestList333
-      <TestList />
+      <SiderList />
+      <StarList />
+      {/* <TestList /> */}
     </div>
   )
 }
