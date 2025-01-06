@@ -1,40 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# イベント開催記事管理システム
 
-## Getting Started
+## プロジェクト概要
+イベント開催情報の記事を管理できるシステムです。ユーザーはイベント記事の投稿、編集、削除を行えるほか、コメント機能や閲覧履歴を確認できます。管理者はダッシュボードを利用して記事やユーザーの管理を行うことができます。
 
-First, run the development server:
+## 使用技術
+- **フロントエンド:** React, Next.js, TypeScript
+- **バックエンド:** Next.js APIルート
+- **ORM:** Prisma
+- **UIフレームワーク:** Ant Design
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 主な機能
+### 一般ユーザー向け機能
+- 記事閲覧
+- 検索・カテゴリ・タグによるフィルタリング
+- コメント投稿・管理
+- イベントのブックマーク
+- モバイル対応レスポンシブデザイン
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 管理者向け機能
+- 記事の投稿、編集、削除
+- カテゴリ・タグ管理
+- 公開・非公開ステータス管理
+- アクセス分析レポート
 
 
-## rfce生成页面文件
-## rfce生成页面文件 1229
+## デプロイ方法
+1. コードをGitHubリポジトリにプッシュします。
+2. Vercelアカウントを作成し、リポジトリをインポートします。
+3. 環境変数をVercelの設定から追加します。
+4. デプロイボタンをクリックすると自動デプロイが開始されます。
+
+
+## 注意事項
+- 環境変数の管理に注意してください。機密情報は漏洩しないように `.env.local` に保存してください。
+- Prismaマイグレーション後はデータベースの整合性を確認してください。
+
+## 今後の改善点
+- SNS連携機能の追加
+- ダークモード対応
+- イベントカレンダー機能の実装
+
+## ライセンス
+このプロジェクトはMITライセンスの下で提供されています。詳細は `LICENSE` ファイルをご覧ください。
+
