@@ -2,6 +2,7 @@
   "name": "my-nextjs",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/dist/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
