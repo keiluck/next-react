@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import React from 'react'
-import Detail from '../_compnents/Detail';
+//import Detail from '../_compnents/Detail';
 
 type Props = {
   params: {

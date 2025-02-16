@@ -10,10 +10,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-amplify/adapter-nextjs": "^1.4.1",
     "@prisma/client": "^5.22.0",
     "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-react": "^1.0.6",
     "antd": "^5.22.5",
+    "aws-amplify": "^6.12.1",
     "dayjs": "^1.11.13",
     "next": "13.5.7",
     "react": "^18",
